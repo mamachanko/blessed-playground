@@ -1,12 +1,12 @@
-import * as blessed from 'blessed';
-import { spawn } from 'child_process';
+const blessed = require('blessed');
+const { spawn } = require('child_process');
 
 const screen = blessed.screen({ 
     title: 'git log with colors',
     smartCSR: true,
-    log: 'gitlog.ts.log'
+    log: 'gitlog.js.log',
+    dump: true
 });
-
 screen.log('starting');
 
 screen.key(['escape', 'q', 'C-c'], () => process.exit(0));
